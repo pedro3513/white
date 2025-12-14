@@ -111,3 +111,13 @@ trojan://BmVsa+yhb-QwGYXD7t.LKPNnRMqeI@104.238.188.249:25075/?type=tcp&security=
 trojan://BmVsa+yhb-QwGYXD7t.LKPNnRMqeI@95.179.210.231:25075/?type=tcp&security=tls&sni=ads.x5.ru&allowInsecure=1#%F0%9F%9A%A831%40oneclickvpnkeys
 trojan://BmVsa+yhb-QwGYXD7t.LKPNnRMqeI@108.61.123.140:25075/?type=tcp&security=tls&sni=ads.x5.ru&allowInsecure=1#%F0%9F%9A%A849%40oneclickvpnkeys
 trojan://rV3TjWB8R1EiK1xhmnypsgeo@172.236.2.42:19872/?type=tcp&security=tls&sni=ads.x5.ru&allowInsecure=1#%F0%9F%9A%A874%40oneclickvpnkeys
+vless://53fff6cc-b4ec-43e8-ade5-e0c42972fc33@37.120.184.180:80/?type=ws&encryption=none&flow=&host=cdn.ir&path=%2Fnews#%E2%9C%8592%40oneclickvpnkeys
+vless://eea96ff1-ce17-4c8c-964c-fa774ecb84f2@94.131.100.164:443/?type=ws&encryption=none&flow=&path=%2Fgfvfgzws&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8599%40oneclickvpnkeys
+trojan://blhwsknjxmfuydz0vhfv@146.70.73.210:53809/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8596%40oneclickvpnkeys
+vless://0a0d846f-8f54-4db4-940b-b373b1b02e4c@94.131.100.173:443/?type=ws&encryption=none&flow=&host=639010645287857140.accord-lmnxa.info&path=%2Fcoxzfsws&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8593%40oneclickvpnkeys
+trojan://3SdlLXC%238QNWgRc509omc@46.62.199.132:12247/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%85100%40oneclickvpnkeys
+trojan://4Jt6CN%2321.rzQjTEUeDHM@217.170.199.80:21363/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8591%40oneclickvpnkeys
+trojan://RPyW62_b9aH.ztJKeArou@83.143.87.9:18581/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8598%40oneclickvpnkeys
+trojan://kuGDUhAYqXnvIomV0Kdljfor@167.17.70.250:27234/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8594%40oneclickvpnkeys
+trojan://kuGDUhAYqXnvIomV0Kdljfor@167.17.70.117:27234/?type=tcp&security=tls&sni=www.vk.com&allowInsecure=1#%E2%9C%8597%40oneclickvpnkeys
+vless://ae0a43bc-6189-456e-9b8a-a93f39af336e@38.180.144.156:443/?type=grpc&encryption=none&flow=&serviceName=4ad80c2f8c79fca2b989b494&sni=www.microsoft.com&fp=chrome&security=reality&pbk=76Cfr5qNl9BCrSb6jdkrgj0HbwfyCwj4oF6JJVhKD0s&sid=42d7234d875308a2#%E2%9C%8595%40oneclickvpnkeys
