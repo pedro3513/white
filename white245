@@ -1,1 +1,110 @@
+{
+  "dns" : {
+    "queryStrategy" : "UseIP",
+    "servers" : [
+      "1.1.1.1",
+      "1.0.0.1"
+    ]
+  },
+  "inbounds" : [
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10808,
+      "protocol" : "socks",
+      "settings" : {
+        "auth" : "noauth",
+        "udp" : true
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled" : true,
+        "routeOnly" : false
+      },
+      "tag" : "socks"
+    },
+    {
+      "listen" : "127.0.0.1",
+      "port" : 10809,
+      "protocol" : "http",
+      "settings" : {
+        "allowTransparent" : false
+      },
+      "sniffing" : {
+        "destOverride" : [
+          "http",
+          "tls",
+          "quic"
+        ],
+        "enabled" : true,
+        "routeOnly" : false
+      },
+      "tag" : "http"
+    }
+  ],
+  "log" : {
+    "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/access",
+    "dnsLog" : true,
+    "loglevel" : "Warning"
+  },
+  "outbounds" : [
+    {
+      "protocol" : "vless",
+      "settings" : {
+        "vnext" : [
+          {
+            "address" : "51.250.0.25",
+            "port" : 8443,
+            "users" : [
+              {
+                "encryption" : "none",
+                "flow" : "xtls-rprx-vision",
+                "id" : "def45029-a3fd-4a00-beca-382347a106a9"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings" : {
+        "network" : "tcp",
+        "realitySettings" : {
+          "fingerprint" : "qq",
+          "publicKey" : "u_KAxoohXYMQvVtkWYDnydmza_Ix67JiwCNtdcgc83I",
+          "serverName" : "ads.x5.ru",
+          "shortId" : "10f786a2491b2cd5",
+          "show" : false
+        },
+        "security" : "reality",
+        "tcpSettings" : {
 
+        }
+      },
+      "tag" : "proxy"
+    },
+    {
+      "protocol" : "freedom",
+      "tag" : "direct"
+    },
+    {
+      "protocol" : "blackhole",
+      "tag" : "block"
+    }
+  ],
+  "remarks" : "🇫🇮Универсальный 2 (TCP)",
+  "routing" : {
+    "domainMatcher" : "hybrid",
+    "domainStrategy" : "IPIfNonMatch",
+    "rules" : [
+      {
+        "outboundTag" : "direct",
+        "protocol" : [
+          "bittorrent"
+        ],
+        "type" : "field"
+      }
+    ]
+  }
+}
