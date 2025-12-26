@@ -1,4 +1,4 @@
-#hide-settings: 1
+#hide-settings: true
 #profile-title: ArbussVPN
 #profile-update-interval: 1
 #subscription-userinfo: upload=0; download=2153701362; total=0; expire=9999999999
