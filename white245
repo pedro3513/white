@@ -1,6 +1,6 @@
 #profile-title: ArbussVPN
 #profile-update-interval: 1
-#subscription-userinfo: upload=0; download=2153701362; total=0; expire=17909516223
+#subscription-userinfo: upload=0; download=2153701362; total=0; expire=9999999999
 
 vless://13534f94-678e-0014-9d01-d4211806bc22@ee.quattro-tech.ru:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=qq&sni=ee.quattro-tech.ru&pbk=10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc&sid=43dcff53849b81e6#%F0%9F%87%AA%F0%9F%87%AA%D0%AD%D1%81%D1%82%D0%BE%D0%BD%D0%B8%D1%8F%20(DefaultVPN)
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.10:8080#🇺🇸США (DefaultVPN)
