@@ -1,3 +1,4 @@
+#profile-title: ArbussVPN #profile-update-interval: 1
 vless://13534f94-678e-0014-9d01-d4211806bc22@ee.quattro-tech.ru:443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=qq&sni=ee.quattro-tech.ru&pbk=10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc&sid=43dcff53849b81e6#%F0%9F%87%AA%F0%9F%87%AA%D0%AD%D1%81%D1%82%D0%BE%D0%BD%D0%B8%D1%8F%20(DefaultVPN)
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpvWklvQTY5UTh5aGNRVjhrYTNQYTNB@45.87.175.10:8080#🇺🇸США (DefaultVPN)
 vless://b5b9ca41-c0c5-4236-a5af-8fc73e6f48d3@ru.aliusvpn.ru:8443?flow=xtls-rprx-vision&type=tcp&headerType=none&security=reality&fp=random&sni=aliusfilms.ru&pbk=cynncQk7kKzEQaExg-FN7pMqFaZPSXEi_Ggy7AXXmVg&sid=2356d1ae4b#%F0%9F%87%BA%F0%9F%87%B8%D0%A1%D0%A8%D0%90%20(DefaultVPN)
