@@ -43,250 +43,6 @@
       },
       "sniffing" : {
         "destOverride" : [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "socks-in"
-    },
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10809,
-      "protocol" : "http",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "http"
-    },
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10820,
-      "protocol" : "socks",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
-          "http",
-          "quic",
-          "tls"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "socks-direct"
-    }
-  ],
-  "log" : {
-    "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/access",
-    "dnsLog" : true,
-    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-28_22-13-19.log",
-    "loglevel" : "Warning"
-  },
-  "outbounds" : [
-    {
-      "protocol" : "vless",
-      "settings" : {
-        "testpre" : 5,
-        "testseed" : [
-          580,
-          310,
-          712,
-          92
-        ],
-        "vnext" : [
-          {
-            "address" : "51.250.8.129",
-            "port" : 4241,
-            "users" : [
-              {
-                "encryption" : "none",
-                "flow" : "xtls-rprx-vision",
-                "id" : "588d810f-69d3-4bf2-95de-4fdbcf30f30d",
-                "level" : 8,
-                "security" : "auto"
-              }
-            ]
-          }
-        ]
-      },
-      "streamSettings" : {
-        "network" : "tcp",
-        "realitySettings" : {
-          "fingerprint" : "chrome",
-          "publicKey" : "OCRYYq4e92sQ-wWFRX6WX9pdvuFBWOqybLhpSiv3nFA",
-          "serverName" : "ads.x5.ru",
-          "shortId" : "111111",
-          "show" : false,
-          "spiderX" : ""
-        },
-        "security" : "reality",
-        "tcpSettings" : {
-          "header" : {
-            "type" : "none"
-          }
-        }
-      },
-      "tag" : "proxy"
-    },
-    {
-      "protocol" : "freedom",
-      "tag" : "direct"
-    },
-    {
-      "protocol" : "blackhole",
-      "tag" : "block"
-    }
-  ],
-  "policy" : {
-    "levels" : {
-      "8" : {
-        "bufferSize" : 3,
-        "connIdle" : 300,
-        "downlinkOnly" : 4,
-        "handshake" : 3,
-        "statsUserDownlink" : false,
-        "statsUserOnline" : false,
-        "statsUserUplink" : false,
-        "uplinkOnly" : 2
-      }
-    },
-    "system" : {
-      "statsInboundDownlink" : false,
-      "statsInboundUplink" : false,
-      "statsOutboundDownlink" : false,
-      "statsOutboundUplink" : false
-    }
-  },
-  "remarks" : "🇩🇪Обход Моб. Интернета",
-  "routing" : {
-    "domainStrategy" : "IPIfNonMatch",
-    "rules" : [
-      {
-        "domain" : [
-          "geosite:private",
-          "geosite:category-ru"
-        ],
-        "outboundTag" : "direct"
-      },
-      {
-        "ip" : [
-          "geoip:cn",
-          "geoip:ru",
-          "geoip:by",
-          "geoip:kz"
-        ],
-        "outboundTag" : "direct"
-      },
-      {
-        "domain" : [
-          "geosite:youtube",
-          "geosite:category-ban-ru"
-        ],
-        "outboundTag" : "proxy"
-      },
-      {
-        "ip" : [
-          "geoip:cloudflare"
-        ],
-        "outboundTag" : "proxy"
-      },
-      {
-        "ip" : [
-          "1.1.1.1"
-        ],
-        "outboundTag" : "proxy",
-        "port" : "53",
-        "type" : "field"
-      },
-      {
-        "ip" : [
-          "1.0.0.1"
-        ],
-        "outboundTag" : "direct",
-        "port" : "53",
-        "type" : "field"
-      },
-      {
-        "inboundTag" : [
-          "socks-direct"
-        ],
-        "outboundTag" : "direct"
-      }
-    ]
-  }
-},
-{
-  "api" : {
-    "listen" : "127.0.0.1:10085",
-    "services" : [
-      "HandlerService"
-    ],
-    "tag" : "api"
-  },
-  "dns" : {
-    "hosts" : {
-      "cloudflare-dns.com" : "1.1.1.1",
-      "dns.google" : "8.8.8.8"
-    },
-    "queryStrategy" : "UseIPv4",
-    "servers" : [
-      "1.1.1.1",
-      {
-        "address" : "1.1.1.1",
-        "domains" : [
-          "geosite:youtube",
-          "geosite:category-ban-ru"
-        ],
-        "port" : 53
-      },
-      {
-        "address" : "1.0.0.1",
-        "domains" : [
-          "geosite:private",
-          "geosite:category-ru"
-        ],
-        "port" : 53
-      }
-    ]
-  },
-  "inbounds" : [
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10808,
-      "protocol" : "socks",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
           "tls",
           "http",
           "quic"
@@ -350,7 +106,7 @@
   "log" : {
     "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/access",
     "dnsLog" : true,
-    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-28_22-13-50.log",
+    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-28_22-24-50.log",
     "loglevel" : "Warning"
   },
   "outbounds" : [
@@ -366,13 +122,13 @@
         ],
         "vnext" : [
           {
-            "address" : "elastic.sbrf-cdn342.ru",
-            "port" : 443,
+            "address" : "51.250.96.243",
+            "port" : 9443,
             "users" : [
               {
                 "encryption" : "none",
                 "flow" : "xtls-rprx-vision",
-                "id" : "588d810f-69d3-4bf2-95de-4fdbcf30f30d",
+                "id" : "78a6e6f5-59a5-47f3-952f-cd3fa2026e6a",
                 "level" : 8,
                 "security" : "auto"
               }
@@ -384,15 +140,27 @@
         "network" : "tcp",
         "realitySettings" : {
           "fingerprint" : "chrome",
-          "publicKey" : "OCRYYq4e92sQ-wWFRX6WX9pdvuFBWOqybLhpSiv3nFA",
-          "serverName" : "sun6-21.userapi.com",
-          "shortId" : "111111",
+          "mldsa65Verify" : "",
+          "publicKey" : "ZSzB9TQPGNcCiC0WLmciF5Jc8doJDvdRgbqTi8SCoEM",
+          "serverName" : "api-maps.yandex.ru",
+          "shortId" : "a1b2c3d4e5f6789a",
           "show" : false,
           "spiderX" : ""
         },
         "security" : "reality",
         "tcpSettings" : {
           "header" : {
+            "request" : {
+              "headers" : {
+                "Host" : [
+                  ""
+                ]
+              },
+              "method" : "GET",
+              "path" : [
+                ""
+              ]
+            },
             "type" : "none"
           }
         }
