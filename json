@@ -1,244 +1,194 @@
 {
-  "api" : {
-    "listen" : "127.0.0.1:10085",
-    "services" : [
-      "HandlerService"
-    ],
-    "tag" : "api"
-  },
-  "dns" : {
-    "hosts" : {
-      "cloudflare-dns.com" : "1.1.1.1",
-      "dns.google" : "8.8.8.8"
-    },
-    "queryStrategy" : "UseIPv4",
-    "servers" : [
-      "1.1.1.1",
-      {
-        "address" : "1.1.1.1",
-        "domains" : [
-          "geosite:youtube",
-          "geosite:category-ban-ru"
-        ],
-        "port" : 53
-      },
-      {
-        "address" : "1.0.0.1",
-        "domains" : [
-          "geosite:private",
-          "geosite:category-ru"
-        ],
-        "port" : 53
-      }
-    ]
-  },
-  "inbounds" : [
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10808,
-      "protocol" : "socks",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
-          "tls",
-          "quic",
-          "http"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "socks-in"
-    },
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10809,
-      "protocol" : "http",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
-          "tls",
-          "quic",
-          "http"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "http"
-    },
-    {
-      "listen" : "127.0.0.1",
-      "port" : 10820,
-      "protocol" : "socks",
-      "settings" : {
-        "auth" : "noauth",
-        "udp" : true
-      },
-      "sniffing" : {
-        "destOverride" : [
-          "tls",
-          "quic",
-          "http"
-        ],
-        "enabled" : true,
-        "excludedDomains" : [
-
-        ],
-        "metadataOnly" : false,
-        "routeOnly" : true
-      },
-      "tag" : "socks-direct"
-    }
-  ],
-  "log" : {
-    "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/access",
-    "dnsLog" : true,
-    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-30_17-58-43.log",
-    "loglevel" : "Warning"
-  },
-  "outbounds" : [
-    {
-      "protocol" : "vless",
-      "settings" : {
-        "testpre" : 5,
-        "testseed" : [
-          580,
-          310,
-          712,
-          92
-        ],
-        "vnext" : [
-          {
-            "address" : "51.250.27.90",
-            "port" : 443,
-            "users" : [
-              {
-                "encryption" : "none",
-                "flow" : "xtls-rprx-vision",
-                "id" : "683f71a3-8de1-467a-8562-9ee8f5e80288",
-                "level" : 8,
-                "security" : "auto"
-              }
-            ]
-          }
+    "dns": {
+        "port": 53,
+        "queryStrategy": "UseIPv4",
+        "servers": [
+            "1.1.1.1",
+            "8.8.8.8",
+            {
+                "address": "77.88.8.8",
+                "domains": [
+                    "geosite:category-ru"
+                ]
+            }
         ]
-      },
-      "streamSettings" : {
-        "network" : "tcp",
-        "realitySettings" : {
-          "fingerprint" : "chrome",
-          "publicKey" : "ZDHa3Fbl_IxcBtjcWmZtqtsmK1u2vA4en8zDpIkhUA8",
-          "serverName" : "api-maps.yandex.ru",
-          "shortId" : "6d021e2120ed3fac",
-          "show" : false,
-          "spiderX" : ""
+    },
+    "inbounds": [
+        {
+            "listen": "127.0.0.1",
+            "port": 10808,
+            "protocol": "socks",
+            "settings": {
+                "auth": "noauth",
+                "udp": true
+            },
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true
+            },
+            "tag": "socks"
         },
-        "security" : "reality",
-        "tcpSettings" : {
-          "header" : {
-            "type" : "none"
-          }
+        {
+            "listen": "127.0.0.1",
+            "port": 10809,
+            "protocol": "http",
+            "sniffing": {
+                "destOverride": [
+                    "http",
+                    "tls",
+                    "quic"
+                ],
+                "enabled": true
+            },
+            "tag": "http"
         }
-      },
-      "tag" : "proxy"
+    ],
+    "log": {
+        "loglevel": "warning"
     },
-    {
-      "protocol" : "freedom",
-      "tag" : "direct"
+    "observatory": {
+        "enableConcurrency": true,
+        "probeInterval": "1m",
+        "probeUrl": "https://www.google.com/generate_204",
+        "subjectSelector": [
+            "cand-01-3f39a6e2",
+            "cand-02-89163fd3"
+        ]
     },
-    {
-      "protocol" : "blackhole",
-      "tag" : "block"
+    "outbounds": [
+        {
+            "protocol": "vless",
+            "settings": {
+                "vnext": [
+                    {
+                        "address": "178.154.221.120",
+                        "port": 8443,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "12a1f01d-e4a7-4512-968b-bbf4b5f17249"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "edge",
+                    "publicKey": "10rVZPoOUP1TlQviIAsQ_jAROX0fRQxH0C92nq_zGQc",
+                    "serverName": "ads.x5.ru",
+                    "shortId": "43dcff53849b81e6",
+                    "show": false
+                },
+                "security": "reality"
+            },
+            "tag": "cand-01-3f39a6e2"
+        },
+        {
+            "protocol": "vless",
+            "settings": {
+                "testpre": 5,
+                "testseed": [
+                    580,
+                    310,
+                    712,
+                    92
+                ],
+                "vnext": [
+                    {
+                        "address": "51.250.27.90",
+                        "port": 443,
+                        "users": [
+                            {
+                                "encryption": "none",
+                                "flow": "xtls-rprx-vision",
+                                "id": "683f71a3-8de1-467a-8562-9ee8f5e80288",
+                                "level": 8,
+                                "security": "auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "streamSettings": {
+                "network": "tcp",
+                "realitySettings": {
+                    "fingerprint": "chrome",
+                    "publicKey": "ZDHa3Fbl_IxcBtjcWmZtqtsmK1u2vA4en8zDpIkhUA8",
+                    "serverName": "api-maps.yandex.ru",
+                    "shortId": "6d021e2120ed3fac",
+                    "show": false,
+                    "spiderX": ""
+                },
+                "security": "reality",
+                "tcpSettings": {
+                    "header": {
+                        "type": "none"
+                    }
+                }
+            },
+            "tag": "cand-02-89163fd3"
+        },
+        {
+            "protocol": "freedom",
+            "tag": "direct"
+        },
+        {
+            "protocol": "blackhole",
+            "tag": "block"
+        }
+    ],
+    "routing": {
+        "balancers": [
+            {
+                "tag": "bal_price",
+                "selector": [
+                    "cand-01-3f39a6e2",
+                    "cand-02-89163fd3"
+                ],
+                "fallbackTag": "cand-01-3f39a6e2",
+                "strategy": {
+                    "type": "leastLoad",
+                    "settings": {
+                        "expected": 1,
+                        "maxRTT": "2s",
+                        "baselines": [
+                            "2s"
+                        ]
+                    }
+                }
+            }
+        ],
+        "domainStrategy": "IPIfNonMatch",
+        "rules": [
+            {
+                "outboundTag": "direct",
+                "protocol": [
+                    "bittorrent"
+                ],
+                "type": "field"
+            },
+            {
+                "ip": [
+                    "77.88.8.8"
+                ],
+                "outboundTag": "direct"
+            },
+            {
+                "balancerTag": "bal_price",
+                "inboundTag": [
+                    "socks",
+                    "http"
+                ],
+                "network": "tcp,udp",
+                "type": "field"
+            }
+        ]
     }
-  ],
-  "policy" : {
-    "levels" : {
-      "8" : {
-        "bufferSize" : 3,
-        "connIdle" : 300,
-        "downlinkOnly" : 4,
-        "handshake" : 3,
-        "statsUserDownlink" : false,
-        "statsUserOnline" : false,
-        "statsUserUplink" : false,
-        "uplinkOnly" : 2
-      }
-    },
-    "system" : {
-      "statsInboundDownlink" : false,
-      "statsInboundUplink" : false,
-      "statsOutboundDownlink" : false,
-      "statsOutboundUplink" : false
-    }
-  },
-  "remarks" : "🇳🇱Обход Моб. Интернета",
-  "routing" : {
-    "domainStrategy" : "IPIfNonMatch",
-    "rules" : [
-      {
-        "domain" : [
-          "geosite:private",
-          "geosite:category-ru"
-        ],
-        "outboundTag" : "direct"
-      },
-      {
-        "ip" : [
-          "geoip:cn",
-          "geoip:ru",
-          "geoip:by",
-          "geoip:kz"
-        ],
-        "outboundTag" : "direct"
-      },
-      {
-        "domain" : [
-          "geosite:youtube",
-          "geosite:category-ban-ru"
-        ],
-        "outboundTag" : "proxy"
-      },
-      {
-        "ip" : [
-          "geoip:cloudflare"
-        ],
-        "outboundTag" : "proxy"
-      },
-      {
-        "ip" : [
-          "1.1.1.1"
-        ],
-        "outboundTag" : "proxy",
-        "port" : "53",
-        "type" : "field"
-      },
-      {
-        "ip" : [
-          "1.0.0.1"
-        ],
-        "outboundTag" : "direct",
-        "port" : "53",
-        "type" : "field"
-      },
-      {
-        "inboundTag" : [
-          "socks-direct"
-        ],
-        "outboundTag" : "direct"
-      }
-    ]
-  }
 }
