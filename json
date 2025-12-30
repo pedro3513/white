@@ -44,8 +44,8 @@
       "sniffing" : {
         "destOverride" : [
           "tls",
-          "http",
-          "quic"
+          "quic",
+          "http"
         ],
         "enabled" : true,
         "excludedDomains" : [
@@ -67,8 +67,8 @@
       "sniffing" : {
         "destOverride" : [
           "tls",
-          "http",
-          "quic"
+          "quic",
+          "http"
         ],
         "enabled" : true,
         "excludedDomains" : [
@@ -90,8 +90,8 @@
       "sniffing" : {
         "destOverride" : [
           "tls",
-          "http",
-          "quic"
+          "quic",
+          "http"
         ],
         "enabled" : true,
         "excludedDomains" : [
@@ -106,7 +106,7 @@
   "log" : {
     "access" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/access",
     "dnsLog" : true,
-    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-28_22-24-50.log",
+    "error" : "\/private\/var\/mobile\/Containers\/Shared\/AppGroup\/B7859695-9FF0-474D-8A0E-7AD19CF86FD2\/Library\/Application Support\/Xray\/logs\/connectionLogs\/2025-12-30_17-58-43.log",
     "loglevel" : "Warning"
   },
   "outbounds" : [
@@ -122,13 +122,13 @@
         ],
         "vnext" : [
           {
-            "address" : "51.250.96.243",
-            "port" : 9443,
+            "address" : "51.250.27.90",
+            "port" : 443,
             "users" : [
               {
                 "encryption" : "none",
                 "flow" : "xtls-rprx-vision",
-                "id" : "78a6e6f5-59a5-47f3-952f-cd3fa2026e6a",
+                "id" : "683f71a3-8de1-467a-8562-9ee8f5e80288",
                 "level" : 8,
                 "security" : "auto"
               }
@@ -140,27 +140,15 @@
         "network" : "tcp",
         "realitySettings" : {
           "fingerprint" : "chrome",
-          "mldsa65Verify" : "",
-          "publicKey" : "ZSzB9TQPGNcCiC0WLmciF5Jc8doJDvdRgbqTi8SCoEM",
+          "publicKey" : "ZDHa3Fbl_IxcBtjcWmZtqtsmK1u2vA4en8zDpIkhUA8",
           "serverName" : "api-maps.yandex.ru",
-          "shortId" : "a1b2c3d4e5f6789a",
+          "shortId" : "6d021e2120ed3fac",
           "show" : false,
           "spiderX" : ""
         },
         "security" : "reality",
         "tcpSettings" : {
           "header" : {
-            "request" : {
-              "headers" : {
-                "Host" : [
-                  ""
-                ]
-              },
-              "method" : "GET",
-              "path" : [
-                ""
-              ]
-            },
             "type" : "none"
           }
         }
@@ -196,7 +184,7 @@
       "statsOutboundUplink" : false
     }
   },
-  "remarks" : "🇩🇪Обход Моб. Интернета",
+  "remarks" : "🇳🇱Обход Моб. Интернета",
   "routing" : {
     "domainStrategy" : "IPIfNonMatch",
     "rules" : [
